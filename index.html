@@ -13,138 +13,158 @@
   
   <link rel="stylesheet" href="./assets/css/style.css" />
 
-  <title>Project Tracker</title>
+  <title>Work Day Scheduler</title>
 </head>
 
 <body>
   <div class="jumbotron jumbotron-fluid bg-info text-light">
     <div class="container text-center">
       <h1>
-        Project Tracker
+        Work Day Scheduler
       </h1>
-      <span id="current_time"></span>
+      <p>A simple calendar app for scheduling your work day</p>
+      <div id="current_date"></div>
     </div>
   </div>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-lg-4 col-xl-2">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Instructions</h5>
-            <p class="card-text">Use the button below to add a project.</p>
 
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
-              data-bs-target="#project_modal">
-              Add Project
-            </button>
+  <div class="container-fluid">
+    <form>
+      <div class="row"> <!-- 09:00 -->
+        <div class="col-1">
+          <label for="time_0900">9AM</label>
+        </div>
+        <div class="col-10">
+          <input type="text" id="time_0900" class="form-control"
+            placeholder="">
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
+            <img src="./assets/images/save-icon.png" alt="Save">
+          </button>
+        </div>
+      </div> <!-- row -->
 
-            <!-- Modal -->
-            <div class="modal fade" id="project_modal" tabindex="-1" 
-              aria-labelledby="project_modal_label" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="project_modal_label">Project</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" 
-                      aria-label="Close"></button>
-                  </div> <!-- modal header -->
-                  <div class="modal-body">
-                    <form id="new_project">
-                      <fieldset>
-                        <legend>Project Information</legend>
-                        <div>
-                          <label for="project_name" class="form-label">Name:</label>
-                          <input type="text" name="project_name" id="project_name"
-                            class="form-control" aria-describedby="project_name_help"
-                            required>
-                            <div id="project_name_help" class="form_text mb-3">
-                              The project name should be unique.
-                            </div>
-                        </div>
-                        <div>
-                          <label for="project_type" class="form-label">
-                            Type:
-                          </label>
-                          <select id="project_type" name="project_type" 
-                            class="form-select mb-3">
-                            <option>community service</option>
-                            <option>gratis</option>
-                            <option>pro bono</option>
-                            <option>paid</option>
-                          </select>
-                        </div>
-                        <div>
-                          <label for="project_hourly_wage" class="form-label">
-                            Hourly Wage:
-                          </label>
-                          <input type="number" name="project_hourly_wage" 
-                            class="form-control mb-3" id="project_hourly_wage"
-                            required min="25" step="5">
-                        </div>
-                        <div>
-                          <label for="project_due_date" class="form-label">
-                            Due Date:
-                          </label>
-                          <input type="text" name="project_due_date" 
-                            class="form-control" id="project_due_date"
-                            required>
-                        </div>
-                        <div class="my-3">
-                          <span>
-                            <button class="btn btn-secondary" type="submit">
-                              Add this Project.
-                            </button>
-                          </span>
-                          <span>
-                            <button class="btn btn-secondary" 
-                              type="button" data-bs-dismiss="modal">
-                              Cancel
-                            </button>
-                          </span>
-                          <span id="error_message" class="alert alert-warning d-none" 
-                            role="alert">
-                          </span>
-                        </span>
-                        </div>
-                      </fieldset>
-                    </form>
-                  </div> <!-- modal body -->
-                  <div class="modal-footer">
-                  </div> <!-- modal footer -->
-                </div> <!-- modal content -->
-              </div> <!-- modal dialogue -->
-            </div> <!-- modal -->
-          </div> <!-- card body -->
-        </div> <!-- instructions card -->
-      </div> <!-- column -->
+      <div class="row"> <!-- 10:00 -->
+        <div class="col-1">
+          <label for="time_0900">10AM</label>
+        </div>
+        <div class="col-10">
+          <input type="text" id="time_1000" class="form-control"
+            placeholder="">
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
+            <img src="./assets/images/save-icon.png" alt="Save">
+          </button>
+        </div>
+      </div> <!-- row -->
 
-      <div class="col-12 col-lg-8 col-xl-10">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Current Projects</h5>
-            <div class="card-text">
-              <table id="projects_table" class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Wage</th>
-                    <th scope="col">Due Date</th>
-                    <th scope="col">Days Left</th>
-                    <th scope="col">Earned</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody id="projects_table_body">
-                  <!-- Will be filled in as new projects are added.  -->
-                </tbody>
-              </table>
-            </div> <!-- card text -->
-          </div> <!-- card body -->
-        </div> <!-- table card -->
-      </div> <!-- column -->
-    </div> <!-- row -->
+      <div class="row"> <!-- 11:00 -->
+        <div class="col-1">
+          <label for="time_0900">11AM</label>
+        </div>
+        <div class="col-10">
+          <input type="text" id="time_1100" class="form-control"
+            placeholder="">
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
+            <img src="./assets/images/save-icon.png" alt="Save">
+          </button>
+        </div>
+      </div> <!-- row -->
+
+      <div class="row"> <!-- 12:00 -->
+        <div class="col-1">
+          <label for="time_0900">12PM</label>
+        </div>
+        <div class="col-10">
+          <input type="text" id="time_1200" class="form-control"
+            placeholder="">
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
+            <img src="./assets/images/save-icon.png" alt="Save">
+          </button>
+        </div>
+      </div> <!-- row -->
+
+      <div class="row"> <!-- 13:00 -->
+        <div class="col-1">
+          <label for="time_0900">1PM</label>
+        </div>
+        <div class="col-10">
+          <input type="text" id="time_1300" class="form-control"
+            placeholder="">
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
+            <img src="./assets/images/save-icon.png" alt="Save">
+          </button>
+        </div>
+      </div> <!-- row -->
+
+      <div class="row"> <!-- 14:00 -->
+        <div class="col-1">
+          <label for="time_0900">2PM</label>
+        </div>
+        <div class="col-10">
+          <input type="text" id="time_1400" class="form-control"
+            placeholder="">
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
+            <img src="./assets/images/save-icon.png" alt="Save">
+          </button>
+        </div>
+      </div> <!-- row -->
+
+      <div class="row"> <!-- 15:00 -->
+        <div class="col-1">
+          <label for="time_0900">3PM</label>
+        </div>
+        <div class="col-10">
+          <input type="text" id="time_1500" class="form-control"
+            placeholder="">
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
+            <img src="./assets/images/save-icon.png" alt="Save">
+          </button>
+        </div>
+      </div> <!-- row -->
+
+      <div class="row"> <!-- 16:00 -->
+        <div class="col-1">
+          <label for="time_0900">4PM</label>
+        </div>
+        <div class="col-10">
+          <input type="text" id="time_1600" class="form-control"
+            placeholder="">
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
+            <img src="./assets/images/save-icon.png" alt="Save">
+          </button>
+        </div>
+      </div> <!-- row -->
+
+      <div class="row"> <!-- 17:00 -->
+        <div class="col-1">
+          <label for="time_0900">5PM</label>
+        </div>
+        <div class="col-10">
+          <input type="text" id="time_1700" class="form-control"
+            placeholder="">
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
+            <img src="./assets/images/save-icon.png" alt="Save">
+          </button>
+        </div>
+      </div> <!-- row -->
+
+    </form>
   </div> <!-- container -->
 </body>
 
