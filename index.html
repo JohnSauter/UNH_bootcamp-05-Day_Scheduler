@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Bootstrap 5.1.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <!-- jQuery 1.12.1 -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+  
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <title>Project Tracker</title>
+</head>
+
+<body>
+  <div class="jumbotron jumbotron-fluid bg-info text-light">
+    <div class="container text-center">
+      <h1>
+        Project Tracker
+      </h1>
+      <span id="current_time"></span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-4 col-xl-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Instructions</h5>
+            <p class="card-text">Use the button below to add a project.</p>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
+              data-bs-target="#project_modal">
+              Add Project
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="project_modal" tabindex="-1" 
+              aria-labelledby="project_modal_label" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="project_modal_label">Project</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" 
+                      aria-label="Close"></button>
+                  </div> <!-- modal header -->
+                  <div class="modal-body">
+                    <form id="new_project">
+                      <fieldset>
+                        <legend>Project Information</legend>
+                        <div>
+                          <label for="project_name" class="form-label">Name:</label>
+                          <input type="text" name="project_name" id="project_name"
+                            class="form-control" aria-describedby="project_name_help"
+                            required>
+                            <div id="project_name_help" class="form_text mb-3">
+                              The project name should be unique.
+                            </div>
+                        </div>
+                        <div>
+                          <label for="project_type" class="form-label">
+                            Type:
+                          </label>
+                          <select id="project_type" name="project_type" 
+                            class="form-select mb-3">
+                            <option>community service</option>
+                            <option>gratis</option>
+                            <option>pro bono</option>
+                            <option>paid</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label for="project_hourly_wage" class="form-label">
+                            Hourly Wage:
+                          </label>
+                          <input type="number" name="project_hourly_wage" 
+                            class="form-control mb-3" id="project_hourly_wage"
+                            required min="25" step="5">
+                        </div>
+                        <div>
+                          <label for="project_due_date" class="form-label">
+                            Due Date:
+                          </label>
+                          <input type="text" name="project_due_date" 
+                            class="form-control" id="project_due_date"
+                            required>
+                        </div>
+                        <div class="my-3">
+                          <span>
+                            <button class="btn btn-secondary" type="submit">
+                              Add this Project.
+                            </button>
+                          </span>
+                          <span>
+                            <button class="btn btn-secondary" 
+                              type="button" data-bs-dismiss="modal">
+                              Cancel
+                            </button>
+                          </span>
+                          <span id="error_message" class="alert alert-warning d-none" 
+                            role="alert">
+                          </span>
+                        </span>
+                        </div>
+                      </fieldset>
+                    </form>
+                  </div> <!-- modal body -->
+                  <div class="modal-footer">
+                  </div> <!-- modal footer -->
+                </div> <!-- modal content -->
+              </div> <!-- modal dialogue -->
+            </div> <!-- modal -->
+          </div> <!-- card body -->
+        </div> <!-- instructions card -->
+      </div> <!-- column -->
+
+      <div class="col-12 col-lg-8 col-xl-10">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Current Projects</h5>
+            <div class="card-text">
+              <table id="projects_table" class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Wage</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Days Left</th>
+                    <th scope="col">Earned</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody id="projects_table_body">
+                  <!-- Will be filled in as new projects are added.  -->
+                </tbody>
+              </table>
+            </div> <!-- card text -->
+          </div> <!-- card body -->
+        </div> <!-- table card -->
+      </div> <!-- column -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+</body>
+
+<!-- jQuery and jQuery UI 1.12.1 -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- bootstrap 5.1.3 -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" 
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" 
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" 
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" 
+    crossorigin="anonymous"></script>
+
+<!-- moment 2.27 -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js">
+</script>
+
+<script src="./assets/js/script.js"></script>
+
+</html>
