@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <div class="jumbotron jumbotron-fluid bg-info text-light">
+  <header class="jumbotron jumbotron-fluid bg-info text-light">
     <div class="container text-center">
       <h1>
         Work Day Scheduler
@@ -25,147 +25,148 @@
       <p>A simple calendar app for scheduling your work day</p>
       <div id="current_date"></div>
     </div>
-  </div>
+  </header>
 
-  <div class="container-fluid">
-    <form>
+  <main class="container-fluid">
+    <form id="scheduler_form">
       <div class="row"> <!-- 09:00 -->
         <div class="col-1">
           <label for="time_0900">9AM</label>
         </div>
         <div class="col-10">
           <input type="text" id="time_0900" class="form-control"
-            placeholder="">
+            title="Enter your 9 AM tasks here.">
         </div>
         <div class="col-1">
           <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
-            <img src="./assets/images/save-icon.png" alt="Save">
+            <img src="./assets/images/save-icon.png" alt="Save" title="Save">
           </button>
         </div>
       </div> <!-- row -->
 
       <div class="row"> <!-- 10:00 -->
         <div class="col-1">
-          <label for="time_0900">10AM</label>
+          <label for="time_1000">10AM</label>
         </div>
         <div class="col-10">
           <input type="text" id="time_1000" class="form-control"
-            placeholder="">
+            title="Enter your 10 AM tasks here.">
         </div>
         <div class="col-1">
           <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
-            <img src="./assets/images/save-icon.png" alt="Save">
+            <img src="./assets/images/save-icon.png" alt="Save" title="Save">
           </button>
         </div>
       </div> <!-- row -->
 
       <div class="row"> <!-- 11:00 -->
         <div class="col-1">
-          <label for="time_0900">11AM</label>
+          <label for="time_1100">11AM</label>
         </div>
         <div class="col-10">
           <input type="text" id="time_1100" class="form-control"
-            placeholder="">
+            title="Enter your 11 AM tasks here.">
         </div>
         <div class="col-1">
           <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
-            <img src="./assets/images/save-icon.png" alt="Save">
+            <img src="./assets/images/save-icon.png" alt="Save" title="Save">
           </button>
         </div>
       </div> <!-- row -->
 
       <div class="row"> <!-- 12:00 -->
         <div class="col-1">
-          <label for="time_0900">12PM</label>
+          <label for="time_1200">12PM</label>
         </div>
         <div class="col-10">
           <input type="text" id="time_1200" class="form-control"
-            placeholder="">
+            title="Enter your noon tasks here.">
         </div>
         <div class="col-1">
           <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
-            <img src="./assets/images/save-icon.png" alt="Save">
+            <img src="./assets/images/save-icon.png" alt="Save" title="Save">
           </button>
         </div>
       </div> <!-- row -->
 
       <div class="row"> <!-- 13:00 -->
         <div class="col-1">
-          <label for="time_0900">1PM</label>
+          <label for="time_1300">1PM</label>
         </div>
         <div class="col-10">
           <input type="text" id="time_1300" class="form-control"
-            placeholder="">
+            title="Enter your 1 PM tasks here.">
         </div>
         <div class="col-1">
           <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
-            <img src="./assets/images/save-icon.png" alt="Save">
+            <img src="./assets/images/save-icon.png" alt="Save" title="Save">
           </button>
         </div>
       </div> <!-- row -->
 
       <div class="row"> <!-- 14:00 -->
         <div class="col-1">
-          <label for="time_0900">2PM</label>
+          <label for="time_1400">2PM</label>
         </div>
         <div class="col-10">
           <input type="text" id="time_1400" class="form-control"
-            placeholder="">
+            title="Enter your 2 PM tasks here.">
         </div>
         <div class="col-1">
           <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
-            <img src="./assets/images/save-icon.png" alt="Save">
+            <img src="./assets/images/save-icon.png" alt="Save" title="Save">
           </button>
         </div>
       </div> <!-- row -->
 
       <div class="row"> <!-- 15:00 -->
         <div class="col-1">
-          <label for="time_0900">3PM</label>
+          <label for="time_1500">3PM</label>
         </div>
         <div class="col-10">
           <input type="text" id="time_1500" class="form-control"
-            placeholder="">
+            title="Enter your 3 PM tasks here.">
         </div>
         <div class="col-1">
           <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
-            <img src="./assets/images/save-icon.png" alt="Save">
+            <img src="./assets/images/save-icon.png" alt="Save" title="Save">
           </button>
         </div>
       </div> <!-- row -->
 
       <div class="row"> <!-- 16:00 -->
         <div class="col-1">
-          <label for="time_0900">4PM</label>
+          <label for="time_1600">4PM</label>
         </div>
         <div class="col-10">
           <input type="text" id="time_1600" class="form-control"
-            placeholder="">
+            title="Enter your 4 PM tasks here.">
         </div>
         <div class="col-1">
           <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
-            <img src="./assets/images/save-icon.png" alt="Save">
+            <img src="./assets/images/save-icon.png" alt="Save" title="Save">
           </button>
         </div>
       </div> <!-- row -->
 
       <div class="row"> <!-- 17:00 -->
         <div class="col-1">
-          <label for="time_0900">5PM</label>
+          <label for="time_1700">5PM</label>
         </div>
         <div class="col-10">
           <input type="text" id="time_1700" class="form-control"
-            placeholder="">
+            title="Enter your 5 PM tasks here.">
         </div>
         <div class="col-1">
           <button type="button" class="btn btn-outline-light btn-sm p-0 border-0">
-            <img src="./assets/images/save-icon.png" alt="Save">
+            <img src="./assets/images/save-icon.png" alt="Save" title="Save">
           </button>
         </div>
       </div> <!-- row -->
 
     </form>
-  </div> <!-- container -->
+  </main> <!-- container -->
+  
 </body>
 
 <!-- jQuery and jQuery UI 1.12.1 -->
